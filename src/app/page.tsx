@@ -1,16 +1,14 @@
-import { About } from "~/components/About";
-import { Header } from "~/components/Header";
-import { Projects } from "~/components/Projects";
-import { Skills } from "~/components/Skills";
+import { Header } from "~/components/header";
+import { Hero } from "~/components/hero";
+import { Contact } from "~/components/contact";
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-white">
       <Header />
-      <main className="container mx-auto flex-grow py-2">
-        <About />
-        {/* <Skills />
-        <Projects /> */}
+      <main className="flex-1">
+        <Hero />
+        <Contact />
       </main>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Nickname } from "~/components/Nickname";
+import { Nickname } from "~/components/nickname";
 export function About() {
   return (
     <section id="about" className="my-12">

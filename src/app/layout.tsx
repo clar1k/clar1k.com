@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
   title: "clar1k - software engineer",
@@ -8,14 +9,14 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const geist = GeistSans.className;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="bg-theme-dark font-mono text-theme-light">
-        {children}
-      </body>
+      <body className={geist}>{children}</body>
     </html>
   );
 }
