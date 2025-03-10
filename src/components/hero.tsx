@@ -16,16 +16,7 @@ function Hero() {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button
-                variant="outline"
-                // onClick={() =>
-                //   document
-                //     .getElementById("contact")
-                //     ?.scrollIntoView({ behavior: "smooth" })
-                // }
-              >
-                Contact Me
-              </Button>
+              <Button variant="outline">Contact Me</Button>
             </div>
           </div>
           <CodeDisplay />

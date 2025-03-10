@@ -2,6 +2,8 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
+import { Header } from "~/components/header";
+import { PostHogProvider } from "~/providers";
 
 export const metadata: Metadata = {
   title: "clar1k - software engineer",
@@ -16,7 +18,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={geist}>{children}</body>
+      <PostHogProvider>
+        <body className={geist}>
+          <Header />
+          {children}
+        </body>
+      </PostHogProvider>
     </html>
   );
 }
