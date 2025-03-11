@@ -15,7 +15,10 @@ function Header() {
           >
             Articles
           </Link>
-          <Link href="#contact" className="text-sm font-medium hover:underline">
+          <Link
+            href="/#contact"
+            className="text-sm font-medium hover:underline"
+          >
             Contact
           </Link>
         </nav>

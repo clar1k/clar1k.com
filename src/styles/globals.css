@@ -66,3 +66,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .bg-grid {
+    background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+      linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}

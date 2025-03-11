@@ -6,17 +6,7 @@ export default async function ArticlesPage() {
   const articles = await getArticles();
 
   return (
-    <main
-      className="flex min-h-screen w-full justify-center py-12 md:py-24 lg:py-32 lg:pt-24"
-      style={{
-        backgroundColor: "#f8f9fa",
-        backgroundImage: `
-          linear-gradient(to right, #e5e7eb 1px, transparent 1px),
-          linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)
-        `,
-        backgroundSize: "40px 40px",
-      }}
-    >
+    <main className="bg-grid flex min-h-screen w-full justify-center bg-[#f8f9fa] py-12 md:py-24 lg:py-32 lg:pt-24">
       <div className="container px-4 md:px-6">
         <div className="mb-12 flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">

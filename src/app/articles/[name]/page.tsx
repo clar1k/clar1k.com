@@ -13,17 +13,7 @@ export default async function ArticlePage({
   const article = content.meta;
 
   return (
-    <main
-      className="flex w-full justify-center py-12 md:py-24 lg:py-32 lg:pt-24"
-      style={{
-        backgroundColor: "#f8f9fa",
-        backgroundImage: `
-          linear-gradient(to right, #e5e7eb 1px, transparent 1px),
-          linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)
-        `,
-        backgroundSize: "40px 40px",
-      }}
-    >
+    <main className="bg-grid flex w-full justify-center bg-[#f8f9fa] py-12 md:py-24 lg:py-32 lg:pt-24">
       <div className="container px-4 md:px-6">
         <article className="mx-auto max-w-3xl rounded-lg border bg-white p-6 shadow-sm md:p-8 lg:p-10">
           <div className="mb-8">

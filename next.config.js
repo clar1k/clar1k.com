@@ -9,6 +9,7 @@ const config = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   experimental: {
     useCache: true,
+    viewTransition: true,
   },
 };
 const withMDX = createMDX({});
