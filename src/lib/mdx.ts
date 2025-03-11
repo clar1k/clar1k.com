@@ -2,8 +2,11 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { articlesSchema, type Article } from "~/types/types";
+import { env } from "~/env";
 
-const articlesDirectory = path.join(process.cwd(), "content");
+
+const articlesDirectory = path.resolve(process.cwd(), "content")
+
 const fsp = fs.promises;
 
 export async function getArticles(): Promise<Article[]> {
@@ -11,8 +14,8 @@ export async function getArticles(): Promise<Article[]> {
 
   const fileNames = fs.readdirSync(articlesDirectory);
   const promises = [];
-  for (const fname of fileNames) {
-    const fullPath = path.join(articlesDirectory, fname);
+  for (const name of fileNames) {
+    const fullPath = path.join(articlesDirectory, name);
     promises.push(fsp.readFile(fullPath, "utf8"));
   }
 
