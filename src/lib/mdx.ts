@@ -5,7 +5,7 @@ import { articlesSchema, type Article } from "~/types/types";
 import { env } from "~/env";
 
 
-const articlesDirectory = path.join(process.cwd(), "content")
+const articlesDirectory = path.resolve(process.cwd(), "content")
 
 const fsp = fs.promises;
 
