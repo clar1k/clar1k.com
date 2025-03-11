@@ -1,17 +1,20 @@
-import Hello from "./hello.mdx";
+import { getArticleBySlug } from "~/lib/mdx";
+import { serialize } from "next-mdx-remote/serialize";
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
-  const article = {
-    title: "Building Modern Web Applications with Next.js",
-    date: "March 5, 2025",
-    tags: ["Next.js", "React", "Web Development"],
-    content: `
-    `,
-  };
+import { MDX } from "~/app/articles/[name]/mdx";
+
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ name: string }>;
+}) {
+  const { name } = await params;
+  const content = await getArticleByParam({ name });
+  const article = content.meta;
 
   return (
     <main
-      className="flex w-full justify-center py-12 md:py-24 lg:py-32"
+      className="flex w-full justify-center py-12 md:py-24 lg:py-32 lg:pt-24"
       style={{
         backgroundColor: "#f8f9fa",
         backgroundImage: `
@@ -44,10 +47,21 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="prose prose-gray lg:prose-lg max-w-none">
-            <Hello />
+            <MDX content={content} />
           </div>
         </article>
       </div>
     </main>
   );
 }
+
+export const getArticleByParam = async ({ name }: { name: string }) => {
+  "use cache";
+  const article = await getArticleBySlug(name);
+  const mdxSource = await serialize(article.content);
+
+  return {
+    source: mdxSource,
+    meta: article.meta,
+  };
+};

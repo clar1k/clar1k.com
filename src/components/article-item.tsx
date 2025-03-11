@@ -3,7 +3,10 @@ import { type Article } from "~/types/types";
 
 export function ArticleItem({ article }: { article: Article }) {
   return (
-    <div className="overflow-hidden rounded-lg border bg-white shadow-sm transition-shadow duration-200 hover:shadow-md">
+    <Link
+      href={`/articles/${article.name}`}
+      className="overflow-hidden rounded-lg border bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+    >
       <div className="p-6">
         <h2 className="mb-2 line-clamp-2 text-xl font-bold">{article.title}</h2>
         <p className="mb-3 line-clamp-3 text-gray-500">{article.excerpt}</p>
@@ -18,13 +21,10 @@ export function ArticleItem({ article }: { article: Article }) {
             </span>
           ))}
         </div>
-        <Link
-          href="/articles/a"
-          className="text-sm font-medium text-black hover:underline"
-        >
+        <button className="text-sm font-medium text-black hover:underline">
           Read
-        </Link>
+        </button>
       </div>
-    </div>
+    </Link>
   );
 }
