@@ -45,7 +45,7 @@ export default async function ArticlePage({
   );
 }
 
-export const getArticleByParam = async ({ name }: { name: string }) => {
+const getArticleByParam = async ({ name }: { name: string }) => {
   "use cache";
   const article = await getArticleBySlug(name);
   const mdxSource = await serialize(article.content);
