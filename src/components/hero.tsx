@@ -1,5 +1,6 @@
 import { Button } from "~/components/ui/button";
 import { CodeDisplay } from "./code-display";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -16,7 +17,9 @@ function Hero() {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button variant="outline">Contact Me</Button>
+              <Link href="#contact">
+                <Button variant="outline">Contact Me</Button>
+              </Link>
             </div>
           </div>
           <CodeDisplay />

@@ -6,7 +6,7 @@ export function ArticleList({ articles }: { articles: Article[] }) {
     return <span>No articles yet.</span>;
   }
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="space-y-6">
       {articles.map((a) => (
         <ArticleItem key={a.name} article={a} />
       ))}

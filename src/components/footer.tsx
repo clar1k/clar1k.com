@@ -1,8 +1,8 @@
-import { Mail } from "lucide-react";
+import { Mail, PhoneCall } from "lucide-react";
+import { SocialLink } from "~/components/social-link";
 import Link from "next/link";
-import { SocialLink } from "./social-link";
 
-function Contact() {
+function Footer() {
   return (
     <section
       id="contact"
@@ -19,13 +19,21 @@ function Contact() {
               collaboration? I&apos;d love to hear from you.
             </p>
           </div>
-          <div className="flex flex-col gap-1 md:flex-row md:gap-4">
+          <div className="flex w-full flex-col gap-1 px-4 sm:px-0 md:w-auto md:flex-row md:gap-4">
+            <Link
+              href="https://cal.com/clar1k"
+              className="inline-flex items-center rounded-lg bg-black px-4 py-2 text-white hover:bg-black/80"
+              target="_blank"
+            >
+              <PhoneCall className="mr-2 h-4 w-4" />
+              Book a call
+            </Link>
             <Link
               href="mailto:serhii@clar1k.xyz"
               className="inline-flex items-center rounded-lg bg-black px-4 py-2 text-white hover:bg-black/80"
             >
               <Mail className="mr-2 h-4 w-4" />
-              serhii@clar1k.xyz
+              Email me
             </Link>
             <SocialLink href="https://github.com/clar1k" iconSrc="/github.svg">
               GitHub
@@ -51,4 +59,4 @@ function Contact() {
   );
 }
 
-export { Contact };
+export { Footer };

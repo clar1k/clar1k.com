@@ -13,22 +13,22 @@ export default async function ArticlePage({
   const article = content.meta;
 
   return (
-    <main className="bg-grid flex w-full justify-center bg-[#f8f9fa] py-12 md:py-24 lg:py-32 lg:pt-24">
-      <div className="container px-4 md:px-6">
-        <article className="mx-auto max-w-3xl rounded-lg border bg-white p-6 shadow-sm md:p-8 lg:p-10">
-          <div className="mb-8">
-            <div className="mb-4">
-              <time className="text-sm text-gray-500">{article.date}</time>
-              <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+    <main className="min-h-screen bg-cream-50 text-charcoal-800 py-16 px-6">
+      <div className="mx-auto max-w-4xl">
+        <article className="rounded-lg border border-charcoal-800/20 bg-cream-100/50 p-8 md:p-12">
+          <div className="mb-12">
+            <div className="mb-6">
+              <time className="text-sm font-inter text-charcoal-800/60 mb-4 block">{article.date}</time>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light font-lora text-charcoal-800 leading-tight">
                 {article.title}
               </h1>
             </div>
 
-            <div className="mb-6 flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2">
               {article.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800"
+                  className="inline-flex items-center rounded-full bg-cream-50 px-3 py-1 text-sm font-medium text-charcoal-800/80 border border-charcoal-800/10"
                 >
                   {tag}
                 </span>
@@ -36,7 +36,7 @@ export default async function ArticlePage({
             </div>
           </div>
 
-          <div className="prose prose-gray lg:prose-lg max-w-none">
+          <div className="prose prose-charcoal max-w-none font-inter text-charcoal-800 prose-headings:font-lora prose-headings:text-charcoal-800 prose-headings:font-light">
             <MDX content={content} />
           </div>
         </article>

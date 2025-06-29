@@ -2,10 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { articlesSchema, type Article } from "~/types/types";
-import { env } from "~/env";
 
-
-const articlesDirectory = path.resolve(process.cwd(), "content")
+const articlesDirectory = path.resolve(process.cwd(), "content");
 
 const fsp = fs.promises;
 
@@ -25,20 +23,28 @@ export async function getArticles(): Promise<Article[]> {
     const frontMatter = matter(c);
     return frontMatter.data;
   }) as Article[];
-  const res = articlesSchema.safeParse(articles);
-  console.log(res);
-  return articles;
+  const a = articlesSchema.safeParse(articles);
+
+  if (a.error) {
+    return [];
+  }
+
+  return a.data;
 }
 
-export async function getArticleBySlug(slug: string): Promise<{
+type ReadedArticle = {
   meta: Article;
-}> {
+  slug: string;
+  content: string;
+};
+
+export async function getArticleBySlug(slug: string): Promise<ReadedArticle> {
   const realSlug = slug.replace(/\.mdx$/, "");
   const fullPath = path.join(articlesDirectory, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const frontMatter = matter(fileContents);
-  const meta = frontMatter.data;
+  const meta = frontMatter.data as Article;
   return {
     meta,
     slug: realSlug,

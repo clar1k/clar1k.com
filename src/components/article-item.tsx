@@ -5,25 +5,35 @@ export function ArticleItem({ article }: { article: Article }) {
   return (
     <Link
       href={`/articles/${article.name}`}
-      className="overflow-hidden rounded-lg border bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+      className="block w-full rounded-lg border border-charcoal-800/20 bg-cream-100/50 hover:bg-cream-100 hover:border-charcoal-800/40 transition-all duration-200"
     >
-      <div className="p-6">
-        <h2 className="mb-2 line-clamp-2 text-xl font-bold">{article.title}</h2>
-        <p className="mb-3 line-clamp-3 text-gray-500">{article.excerpt}</p>
-
-        <div className="mb-4 flex flex-wrap gap-2">
-          {article.tags.map((tag, index) => (
-            <span
-              key={index}
-              className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800"
-            >
-              {tag}
+      <div className="p-6 md:p-8">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-8">
+          <div className="flex-1">
+            <h2 className="mb-3 text-2xl md:text-3xl font-light font-lora text-charcoal-800 leading-tight">{article.title}</h2>
+            <p className="mb-4 text-lg text-charcoal-800/70 font-inter leading-relaxed">{article.excerpt}</p>
+            
+            <div className="flex flex-wrap gap-2 mb-4">
+              {article.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center rounded-full bg-cream-50 px-3 py-1 text-sm font-medium text-charcoal-800/80 border border-charcoal-800/10"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <div className="flex items-center md:flex-col md:items-end md:justify-start">
+            <span className="text-sm font-medium text-charcoal-800 hover:text-charcoal-900 font-inter">
+              Read article →
             </span>
-          ))}
+            <span className="ml-auto md:ml-0 md:mt-2 text-sm text-charcoal-800/60 font-inter">
+              {article.date}
+            </span>
+          </div>
         </div>
-        <button className="text-sm font-medium text-black hover:underline">
-          Read
-        </button>
       </div>
     </Link>
   );
