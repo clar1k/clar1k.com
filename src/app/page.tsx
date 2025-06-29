@@ -107,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="px-6 py-16 border-t-2 border-cream-100">
+      <section id="contact" className="border-cream-100 border-t-2 px-6 py-16">
         <div className="mx-auto max-w-prose text-center">
           <h2 className="font-lora mb-8 text-3xl font-light md:text-4xl">
             Let's Work Together
@@ -167,11 +167,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t-2 border-cream-100 px-6 py-8">
+      <footer className="border-cream-100 border-t-2 px-6 py-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-charcoal-800/60 text-sm">
-            © 2025 Serhii Khara. Built with Next.js and care.
-          </p>
+          <p className="text-charcoal-800/60 text-sm">© 2025 clar1k</p>
         </div>
       </footer>
     </div>
