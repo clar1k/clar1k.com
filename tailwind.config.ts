@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        lora: ["var(--font-lora)", "serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -55,6 +57,23 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        cream: {
+          50: "#FDF6E3",
+          100: "#FDF2D5",
+          200: "#F5F5DC",
+        },
+        charcoal: {
+          800: "#2D2D2D",
+          900: "#1A1A1A",
+        },
+      },
+      lineHeight: {
+        relaxed: "1.75",
+        loose: "2",
+      },
+      maxWidth: {
+        prose: "65ch",
+        "prose-narrow": "50ch",
       },
     },
   },
