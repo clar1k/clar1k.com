@@ -11,6 +11,18 @@ const config = {
     useCache: true,
     viewTransition: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "media.istockphoto.com",
+      },
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+      },
+    ],
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

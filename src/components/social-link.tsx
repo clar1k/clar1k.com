@@ -24,7 +24,7 @@ function SocialLink({
     <Link
       href={href}
       className={cn(
-        "flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 transition-all duration-75 ease-in hover:bg-accent hover:text-accent-foreground",
+        "flex w-fit items-center gap-2 rounded-md border border-input bg-background px-4 py-2 transition-all duration-75 ease-in hover:bg-accent hover:text-accent-foreground md:w-auto",
         className,
       )}
     >
